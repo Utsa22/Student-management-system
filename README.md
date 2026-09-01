@@ -92,5 +92,4 @@ student_managements/
 │
 ├── .gitignore
 ├── manage.py
-├── requirements.txt
 └── README.md
