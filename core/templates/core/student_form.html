@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+
+    {% if object %}
+        Edit Student
+    {% else %}
+        Add Student
+    {% endif %}
+
+    | StudentMS
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="form-card">
+
+    {% if object %}
+
+        <h1>
+            Edit Student
+        </h1>
+
+    {% else %}
+
+        <h1>
+            Add Student
+        </h1>
+
+    {% endif %}
+
+
+    <form method="post">
+
+        {% csrf_token %}
+
+
+        {{ form.as_p }}
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+
+            {% if object %}
+                Update Student
+            {% else %}
+                Save Student
+            {% endif %}
+
+        </button>
+
+
+        <a
+            href="{% url 'student_list' %}"
+            class="btn secondary"
+        >
+            Cancel
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock %}

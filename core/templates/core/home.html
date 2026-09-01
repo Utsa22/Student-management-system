@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}
+    Home | StudentMS
+{% endblock %}
+
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>
+        Student Management System
+    </h1>
+
+    <p>
+        A simple Django CRUD project with
+        authentication and authorization.
+    </p>
+
+
+    {% if user.is_authenticated %}
+
+        <a
+            href="{% url 'student_list' %}"
+            class="btn"
+        >
+            View Students
+        </a>
+
+
+        <a
+            href="{% url 'student_add' %}"
+            class="btn secondary"
+        >
+            Add Student
+        </a>
+
+    {% else %}
+
+        <a
+            href="{% url 'login' %}"
+            class="btn"
+        >
+            Login
+        </a>
+
+
+        <a
+            href="{% url 'register' %}"
+            class="btn secondary"
+        >
+            Create Account
+        </a>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

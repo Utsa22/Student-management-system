@@ -1,0 +1,123 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Student Details | StudentMS
+{% endblock %}
+
+
+{% block content %}
+
+<div class="detail-card">
+
+    <h1>
+        Student Details
+    </h1>
+
+
+    <div class="detail-row">
+
+        <strong>
+            Name:
+        </strong>
+
+        <span>
+            {{ student.name }}
+        </span>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <strong>
+            Email:
+        </strong>
+
+        <span>
+            {{ student.email }}
+        </span>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <strong>
+            Roll:
+        </strong>
+
+        <span>
+            {{ student.roll }}
+        </span>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <strong>
+            Department:
+        </strong>
+
+        <span>
+            {{ student.department }}
+        </span>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <strong>
+            Owner:
+        </strong>
+
+        <span>
+            {{ student.owner.username }}
+        </span>
+
+    </div>
+
+
+    <div class="detail-row">
+
+        <strong>
+            Created:
+        </strong>
+
+        <span>
+            {{ student.created_at }}
+        </span>
+
+    </div>
+
+
+    <br>
+
+
+    <a
+        href="{% url 'student_update' student.pk %}"
+        class="btn"
+    >
+        Edit
+    </a>
+
+
+    <a
+        href="{% url 'student_delete' student.pk %}"
+        class="btn danger"
+    >
+        Delete
+    </a>
+
+
+    <a
+        href="{% url 'student_list' %}"
+        class="btn secondary"
+    >
+        Back
+    </a>
+
+</div>
+
+{% endblock %}
